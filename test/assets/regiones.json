@@ -1,0 +1,13 @@
+{
+    "intro": "Regiones de Chile"
+    "flashcards" : [
+        {
+            "question": "Primera",
+            "answer" : "Arica y Parinacota"
+        },
+        {
+            "question": "Segunda",
+            "answer": "Tarapacá"
+        }
+    ]
+}
