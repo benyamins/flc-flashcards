@@ -1,0 +1,12 @@
+{
+    "intro": "German (easy) questions..",
+    "questions": [
+        {
+            "question": "The sister",
+            "answer": [],
+            "tags": [],
+            "case": true,
+            "question_type": "basic",
+        }
+    ]
+}
