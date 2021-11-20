@@ -16,6 +16,7 @@ endif()
 
 add_executable(flc
 	src/main.cpp
+	src/console.cpp
 )
 
 find_package(fmt REQUIRED)
@@ -24,4 +25,9 @@ find_package(nlohmann_json REQUIRED)
 target_link_libraries(flc
 	fmt
 	nlohmann_json
+)
+
+target_include_directories(flc PUBLIC
+	"${PROJECT_BINARY_DIR}"
+	"${PROJECT_SOURCE_DIR}/include"
 )

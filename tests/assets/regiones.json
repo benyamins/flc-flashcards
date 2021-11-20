@@ -1,10 +1,9 @@
 {
     "intro": "Flashcards: Regiones de Chile",
-    "questions" : [
+    "questions": [
         {
-            "id": 1,
             "question": "Primera",
-            "answers" : ["Arica y Parinacota", "Arica"]
+            "answers": ["Arica y Parinacota", "Arica"]
         },
         {
             "question": "Segunda",
