@@ -1,5 +1,9 @@
 # FlashCard Game (for learning purposes)
 
+## Requirements
+
+- fmt
+- nlohmann_json
 
 ## Commands:
 
