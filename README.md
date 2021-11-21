@@ -49,7 +49,8 @@ flc u <path-to-json> -upd-id <question-id> -json "{"question": "Is C easy?", "an
             "tags": ["movies", "life"],
             "case": false,
             "question_type": "basic",
-            "end_text": "Adams knew the answer.."
+            "end_text": "Adams knew the answer..",
+            "add": "life"
         },
         {
             "question": "How long until I finish the project?",
@@ -68,8 +69,10 @@ flc u <path-to-json> -upd-id <question-id> -json "{"question": "Is C easy?", "an
             "end_text": "Ethiopia has many ethnic groups, it's largest one is the _Oromo_"
         }
     ]
+    "answers": {
+        "life": ["python", "love"]
+    }
 }
-
 ```
 Question type defines how the user should input the answer:
 
