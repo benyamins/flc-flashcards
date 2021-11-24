@@ -2,39 +2,41 @@
 
 ## Requirements
 
-- fmt
-- nlohmann_json
+- `fmt`
+- `nlohmann_json`
 
 ## Commands:
 
 ``` bash
-# Usage: flc <path-to-json|saved-game> [OPTIONS]
-# or   : flc [COMMAND] <path-to-json|saved-game> [OPTIONS]
+# Usage: flc [COMMAND] <json-file|flashcard-name> [OPTIONS]
 
-flc <path-to-json>         # start the game
-flc update <path-to-json>  # update questions
-flc create <path-to-json>  # create questions
-flc show <path-to-json>    # shows available questions with Id.
+# json-file     : .json file stored in a specific place by the user.
+# flashcard-name: name 
 
-# Start game
-flc <path-to-json> [-id]
+flc start  <json-file|flashcard-name>  # start the game
+flc create <json-file|flashcard-name>  # create questions
+flc update <json-file|flashcard-name>  # update questions
+flc show   <json-file|flashcard-name>  # shows available questions with Id.
+flc list                               # list all flashcard-name stored in $HOME/.local/share/flc.
 
+# Start a game
+flc s <json-file|name> [-id] 
 
-# Create option [-add-json]
-flc c <path-to-json>                            # Creates json & starts questions to fill up the flashcards
-flc c <path-to-json> -add-json "<json-string>"  # must be valid & complete structure (not only questions)
+# Create
+flc c <json-file>  # Creates json & starts questions to fill up the flashcards
+
+# Update
+flc u <json-file> -add-ans #
 
 # Examples:
 
-flc u <path-to-json>  # add questions interactibly.
-flc u <path-to-json> -add -question "Auf wiedersehen" -answer "goodbye,bye" -tags "hard,polite"
-flc u <path-to-json> -add-json "[{"question": "Answer to life?", "answers": ["42"], "tags": ["life"]}]"
-flc u <path-to-json> -add-json "[{"question": "Is C++ easy?", "answers": ["yes", "y"], "case": true}, {...}]"
-flc u <path-to-json> -del <question-id>  # based on the question's position.
-flc u <path-to-json> -upd-id <question-id> -question "Is pyhton easy?" -answer "no,maybe" -case
-flc u <path-to-json> -upd-id <question-id> -json "{"question": "Is C easy?", "answers": ["yes", "y"], "case": true}"
+flc u <json-file>                     # add questions interactively.
+flc u <json-file> -del <question-id>  # interactively based on the questions position.
 
-# if <path-to-json> doesn't end with .json (or any extension), a file is created/updated/used in `.config`.
+flc d <json-file> -id <question-id>       # deletes question based on an id.
+flc d <json-file> -id-add <question-id>   # deletes an "additional_answers" based on an id.
+
+# if <json-file> doesn't end with .json (or any extension), a file is created/updated/used in `.config`.
 ```
 
 ## Question structure
@@ -49,8 +51,7 @@ flc u <path-to-json> -upd-id <question-id> -json "{"question": "Is C easy?", "an
             "tags": ["movies", "life"],
             "case": false,
             "question_type": "basic",
-            "end_text": "Adams knew the answer..",
-            "add": "life"
+            "end_text": "Adams knew the answer.."
         },
         {
             "question": "How long until I finish the project?",
@@ -58,6 +59,7 @@ flc u <path-to-json> -upd-id <question-id> -json "{"question": "Is C easy?", "an
             "tags": ["life", "fun"],
             "case": true,
             "question_type": "multiple",
+            "also": "life",
             "end_text": "There is *no correct* answer here"
         },
         {
@@ -66,11 +68,13 @@ flc u <path-to-json> -upd-id <question-id> -json "{"question": "Is C easy?", "an
             "tags": ["countries", "statistics"],
             "case": true,
             "question_type": "ordered",
-            "end_text": "Ethiopia has many ethnic groups, it's largest one is the _Oromo_"
+            "also": "african_countries",
+            "end_text": "Ethiopia has many ethnic groups, its largest one is the _Oromo_"
         }
-    ]
-    "answers": {
-        "life": ["python", "love"]
+    ],
+    "also": {
+        "life": ["next year", "when I'm older"],
+        "african_countries": ["Djibouti"]
     }
 }
 ```
