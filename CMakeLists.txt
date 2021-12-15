@@ -11,7 +11,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 if(MSVC)
 	add_compile_options()
 elseif(UNIX)
-	add_compile_options(-Wall -Werror -Wextra -pedantic-errors -Wconversion)
+	add_compile_options(-Wall -Werror -Wextra -pedantic-errors -Wconversion -std=c++20)
 endif()
 
 add_executable(flc

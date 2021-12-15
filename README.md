@@ -5,28 +5,35 @@
 - `fmt`
 - `nlohmann_json`
 
-## Commands:
+## Description & Commands
+
+`flc` is a cli program that lets you exercise a user defined subject with flashcard,
+which offers three modes for questions & answers:  
+
+1. A _basic_ mode that lets you input an answer which is checked against the options defined in a json file.
+2. Multiple choice for answer.
+3. An order/ranked choice system.
 
 ``` bash
 # Usage: flc [COMMAND] <json-file|flashcard-name> [OPTIONS]
 
 # json-file     : .json file stored in a specific place by the user.
-# flashcard-name: name 
+# flashcard-name: name of the flashcard deck stored in the `.local/share/flc` folder.
 
-flc start  <json-file|flashcard-name>  # start the game
-flc create <json-file|flashcard-name>  # create questions
-flc update <json-file|flashcard-name>  # update questions
-flc show   <json-file|flashcard-name>  # shows available questions with Id.
-flc list                               # list all flashcard-name stored in $HOME/.local/share/flc.
+flc start  my-flashcard-name  # start the game.
+flc create my-flashcard-name  # create questions.
+flc update my-flashcard-name  # update questions.
+flc list                      # list all flashcard-name stored in $HOME/.local/share/flc/decks.
+flc list   my-flashcard-name  # list all question deck question.
 
-# Start a game
+# Start a flashcard deck
 flc s <json-file|name> [-id] 
 
 # Create
-flc c <json-file>  # Creates json & starts questions to fill up the flashcards
+flc c <json-file|name>  # Creates json & starts questions to fill up the flashcards
 
 # Update
-flc u <json-file> -add-ans #
+flc u <json-file|name> -add-ans #
 
 # Examples:
 
@@ -78,6 +85,7 @@ flc d <json-file> -id-add <question-id>   # deletes an "additional_answers" base
     }
 }
 ```
+
 Question type defines how the user should input the answer:
 
 1. basic: the user enters the text which can be checked to be in the same _case_ or not,
