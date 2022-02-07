@@ -11,7 +11,7 @@
 which offers three modes for questions & answers:  
 
 1. A _basic_ mode that lets you input an answer which is checked against the options defined in a json file.
-2. Multiple choice for answer.
+2. Multiple choice for specified answers.
 3. An order/ranked choice system.
 
 ``` bash
@@ -20,11 +20,11 @@ which offers three modes for questions & answers:
 # json-file     : .json file stored in a specific place by the user.
 # flashcard-name: name of the flashcard deck stored in the `.local/share/flc` folder.
 
-flc start  my-flashcard-name  # start the game.
-flc create my-flashcard-name  # create questions.
-flc update my-flashcard-name  # update questions.
-flc list                      # list all flashcard-name stored in $HOME/.local/share/flc/decks.
-flc list   my-flashcard-name  # list all question deck question.
+flc start  my-deck-name  # start the game.
+flc create my-deck-name  # create questions.
+flc update my-deck-name  # update questions.
+flc list                 # list all the decks stored in $HOME/.local/share/flc/decks.
+flc list   my-deck-name  # list all questions in a deck.
 
 # Start a flashcard deck
 flc s <json-file|name> [-id] 
@@ -46,7 +46,7 @@ flc d <json-file> -id-add <question-id>   # deletes an "additional_answers" base
 # if <json-file> doesn't end with .json (or any extension), a file is created/updated/used in `.config`.
 ```
 
-## Question structure
+## Deck structure
 
 ``` json
 {

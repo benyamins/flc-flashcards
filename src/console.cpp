@@ -5,19 +5,19 @@
 
 namespace fs = std::filesystem;
 
-const char * help_text = R"(
+const char* help_text = R"(
 Flashcard game to get better at remembering things (?)
 
 USAGE
  flc <command> <flashcard-deck> [flags]
 
 COMMANDS
- start  | s deck: start game given a flashcard deck.
- create | c deck: interactively or with additional flags.
- update | u deck: interactively or with additional flags.
- delete | d deck: deletes a deck or question, interactively or with additional flags.
- show   | s deck: prints questions of a given flashcard deck.
- list   | l:      prints the names of saved decks in shared folder.
+ start  | s <deck>: start game given a flashcard deck.
+ create | c <deck>: interactively or with additional flags.
+ update | u <deck>: interactively or with additional flags.
+ delete | d <deck>: deletes a deck or question, interactively or with additional flags.
+ list   | l <deck>: prints questions of a given flashcard deck.
+ list   | l       : prints the names of saved decks in shared folder.
 
 COMMAND FLAGS
  start [-id | -tags]
@@ -30,7 +30,7 @@ COMMAND FLAGS
  delete [-id | -id-also]
    -id:      delete a specific question.
    -id-also: delete an aditional answer given a key.
- show [-tags | -add-ans]
+ list [-tags | -add-ans]
    -tags:    show tags of a specific deck & the number of questions of them.
    -add-ans: shows additional answers available for questions.
 

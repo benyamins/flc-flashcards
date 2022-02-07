@@ -17,6 +17,7 @@ endif()
 add_executable(flc
 	src/main.cpp
 	src/console.cpp
+	src/flashcard.cpp
 )
 
 find_package(fmt REQUIRED)
