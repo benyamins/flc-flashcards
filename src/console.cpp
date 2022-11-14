@@ -1,7 +1,9 @@
-#include <fmt/core.h>
 #include <vector>
 #include <filesystem>
 #include <set>
+#include <algorithm>
+
+#include <fmt/core.h>
 
 namespace fs = std::filesystem;
 
@@ -41,7 +43,7 @@ EXAMPLES
 namespace consoleapp
 {
 
-void console_help(std::string error_message = "")
+void console_help(const std::string& error_message = "")
 {
     if (error_message != "")
     {

@@ -72,7 +72,7 @@ std::string_view trim(std::string_view s)
 }
 
 
-void flashcard_picker(const FlashcardDeck & flashcard_deck)
+void flashcard_picker(const FlashcardDeck& flashcard_deck)
 {
     auto to_lower = [](std::string str)
     {

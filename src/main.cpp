@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <iterator>
 
+#include <fmt/core.h>
+
 #include "console.hpp"
 #include "flashcard.hpp"
 

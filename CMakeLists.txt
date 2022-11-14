@@ -8,11 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Compiler options
-if(MSVC)
-	add_compile_options()
-elseif(UNIX)
-	add_compile_options(-Wall -Werror -Wextra -pedantic-errors -Wconversion -std=c++20)
-endif()
+add_compile_options(-Wall -Werror -Wextra -pedantic-errors -Wconversion -std=c++20)
 
 add_executable(flc
 	src/main.cpp

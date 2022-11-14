@@ -7,7 +7,7 @@
 
 ## Description & Commands
 
-`flc` is a cli program that lets you exercise a user defined subject with flashcard,
+`flc` is a cli program that lets you exercise a particular subject with flashcard,
 which offers three modes for questions & answers:  
 
 1. A _basic_ mode that lets you input an answer which is checked against the options defined in a json file.
@@ -56,7 +56,6 @@ flc d <json-file> -id-add <question-id>   # deletes an "additional_answers" base
             "question": "Answer to the Ultimate Question of Life",
             "answers": ["42", "63"],
             "tags": ["movies", "life"],
-            "case": false,
             "question_type": "basic",
             "end_text": "Adams knew the answer.."
         },
@@ -64,25 +63,17 @@ flc d <json-file> -id-add <question-id>   # deletes an "additional_answers" base
             "question": "How long until I finish the project?",
             "answers": ["Never", "Soon", "Today"],
             "tags": ["life", "fun"],
-            "case": true,
             "question_type": "multiple",
-            "also": "life",
             "end_text": "There is *no correct* answer here"
         },
         {
             "question": "Order by population (Highest to lowest populated)",
             "answers": ["Nigeria", "Ethiopia", "DRC"],
             "tags": ["countries", "statistics"],
-            "case": true,
             "question_type": "ordered",
-            "also": "african_countries",
             "end_text": "Ethiopia has many ethnic groups, its largest one is the _Oromo_"
         }
-    ],
-    "also": {
-        "life": ["next year", "when I'm older"],
-        "african_countries": ["Djibouti"]
-    }
+    ]
 }
 ```
 
@@ -94,8 +85,6 @@ Question type defines how the user should input the answer:
    list is considered the correct one.
 3. ordered: the user sorts the answers which are checked based on the order they where
    placed on the question object.
-
-Only the first type uses the `case` option in a question object.
 
 ## TODO
 1. Markdown support for text (is it actually called like that?)

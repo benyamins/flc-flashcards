@@ -3,11 +3,11 @@
     "questions": [
         {
             "question": "Primera",
-            "answer": "Arica"
+            "answer": ["Arica y Parinacota", "Arica"]
         },
         {
             "question": "Segunda",
-            "answer": "tarapaca"
+            "answer": ["Tarapacá", "Tarapaca"]
         }
     ]
 }
