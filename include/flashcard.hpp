@@ -5,8 +5,8 @@ void intro(std::string& questions_file);
 
 struct Flashcard
 {
-    std::string question,
-                answer;
+    std::string question;
+    std::vector<std::string> answer;
 };
 
 struct FlashcardDeck

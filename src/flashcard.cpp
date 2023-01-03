@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <fstream>
 #include <locale>
+
 #include <nlohmann/json.hpp>
 #include <fmt/core.h>
 
@@ -55,10 +56,17 @@ FlashcardDeck parse_questions(std::string file_path)
     std::vector<json> flashcard_deck_json = document["questions"];
     flashcard_deck.intro = document["intro"];
 
-    for (json& value : flashcard_deck_json) 
+    for (json& value : flashcard_deck_json)
+    {
+            std::vector<std::string> answers;
+
+            for (const auto& e : value["answer"])
+                answers.push_back(e);
+
             flashcard_deck.flashcards.push_back(
-                Flashcard{ .question{ value["question"] }, .answer{ value["answer"] }});
-    
+                Flashcard{ .question{ value["question"] }, .answer{ answers }});
+    }
+
     return flashcard_deck;
 }
 
@@ -89,6 +97,7 @@ void flashcard_picker(const FlashcardDeck& flashcard_deck)
         fmt::print("Question: {}\n", flashcard.question);
 
         std::string answer{ };
+        bool is_correct{ false };
         std::cout << "Answer: ";
 
         std::getline(std::cin, answer);
@@ -96,14 +105,19 @@ void flashcard_picker(const FlashcardDeck& flashcard_deck)
         // TODO: Use a reference?
         answer = trim(answer);
 
-        if (to_lower(answer) == to_lower(flashcard.answer))
+        for (const auto& flc_answer : flashcard.answer)
+        {
+            if (to_lower(answer) == to_lower(flc_answer))
+                is_correct = true;
+        }
+        if (is_correct)
         {
             std::cout << "Correct!" << std::endl;
         }
         else
         {
             fmt::print("Wrong.. you answered: `{}`, but the correct answer is `{}`\n",
-                       answer, flashcard.answer);
+                       answer, "<FIXME: JOIN ANSWERS HERE>");
         }
     }
 }
