@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <set>
 #include <algorithm>
+#include <expected>
 
 #include <fmt/core.h>
 
@@ -81,7 +82,7 @@ struct Args
 // struct {command = vec{"", ""?}, value<> }
 
 
-Args proc_args(int argc, char* argv[])
+std::expected<Args, int> proc_args(int argc, char* argv[])
 {
     Args args{ };
 
@@ -95,7 +96,7 @@ Args proc_args(int argc, char* argv[])
     if (argc == 1)
     {
         console_help("No arguments where passed");
-        std::exit(1);
+        return std::unexpected(1);
     }
     else if (argc == 2)
     {
@@ -107,7 +108,7 @@ Args proc_args(int argc, char* argv[])
                 fmt::format("File `{}`, does not exists", args.file_path);
 
             console_help(error_message);
-            std::exit(1);
+            return std::unexpected(1);
         }
     }
     else if (argc == 3)
@@ -139,14 +140,14 @@ Args proc_args(int argc, char* argv[])
         else
         {
             console_help("Invalid optional argument");
-            std::exit(1);
+            return std::unexpected(1);
         }
         
     }
     else
     {
         console_help("Number of arguments is invalid.");
-        std::exit(1);
+        return std::unexpected(1);
     }
     //for (int i{1}; i < argc; ++i)
     //{

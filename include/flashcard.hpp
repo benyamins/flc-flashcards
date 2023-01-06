@@ -1,20 +1,23 @@
 #include <iostream>
 #include <vector>
 
-void intro(std::string& questions_file);
-
-struct Flashcard
+namespace flc
 {
+
+void intro(std::string &questions_file);
+
+struct Flashcard {
     std::string question;
-    std::vector<std::string> answer;
+    std::vector <std::string> answer;
 };
 
-struct FlashcardDeck
-{
+struct FlashcardDeck {
     std::string intro;
-    std::vector<Flashcard> flashcards;
+    std::vector <Flashcard> flashcards;
 };
 
 
 FlashcardDeck parse_questions(std::string file_path);
-void flashcard_picker(const FlashcardDeck& flashcard_deck);
+
+void flashcard_picker(const FlashcardDeck &flashcard_deck);
+}

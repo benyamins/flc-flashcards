@@ -4,9 +4,9 @@ add_rules("mode.debug", "mode.release")
 add_requires("fmt", "nlohmann_json")
 
 if is_mode("debug") then
-	add_cxxflags("-std=c++20", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion")
+	add_cxxflags("-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion")
 else
-	add_cxxflags("-std=c++20", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-Wextra")
+	add_cxxflags("-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-Wextra")
 end
 
 target("flc")

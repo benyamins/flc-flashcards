@@ -11,18 +11,21 @@
 
 int main(int argc, char* argv[])
 {
-    consoleapp::Args args = consoleapp::proc_args(argc, argv);
+    auto args_result = consoleapp::proc_args(argc, argv);
 
-    if (args.create) std::cout << "Create" << std::endl;
-    if (args.update) std::cout << "Update" << std::endl;
+    if (!args_result) {
+        return 1;
+    }
+
+    consoleapp::Args& args = args_result.value();
 
     std::cout << "filepath: " << args.file_path << std::endl;
     
-    intro(args.file_path);
+    flc::intro(args.file_path);
 
-    FlashcardDeck flashcard_deck = parse_questions(args.file_path);
+    flc::FlashcardDeck flashcard_deck = flc::parse_questions(args.file_path);
 
-    flashcard_picker(flashcard_deck);
+    flc::flashcard_picker(flashcard_deck);
 
     return 0;
 }

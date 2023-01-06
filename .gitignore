@@ -2,3 +2,5 @@
 build
 .xmake
 .idea
+CMakeLists.txt
+cmake-build-debug

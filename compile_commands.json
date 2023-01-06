@@ -1,0 +1,16 @@
+[
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/console.cpp.o", "src/console.cpp"],
+  "file": "src/console.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/flashcard.cpp.o", "src/flashcard.cpp"],
+  "file": "src/flashcard.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+}]

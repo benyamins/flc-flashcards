@@ -1,4 +1,5 @@
 #include <string>
+#include <expected>
 
 namespace consoleapp
 {
@@ -8,5 +9,5 @@ namespace consoleapp
         bool update = false;
         bool create = false;
     };
-    Args proc_args(int argc, char* argv[]);
+    std::expected<Args, int> proc_args(int argc, char* argv[]);
 }
