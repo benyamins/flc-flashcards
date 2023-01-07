@@ -1,5 +1,4 @@
 #include <string>
-#include <filesystem>
 #include <fstream>
 #include <locale>
 
@@ -12,6 +11,18 @@ using json = nlohmann::json;
 
 namespace flc
 {
+
+enum class EResult
+{
+    FileNotFound,
+    JsonError,
+};
+
+struct CardStats
+{
+    unsigned int correct_answers;
+    unsigned int total_questions;
+};
 
 void intro(std::string &questions_file) {
     const char *intro_text = R"(
@@ -60,8 +71,8 @@ FlashcardDeck parse_questions(std::string file_path) {
 
 
 std::string_view trim(std::string_view s) {
-    s.remove_prefix(std::min(s.find_first_not_of(" "), s.size()));
-    s.remove_suffix(std::min(s.size() - s.find_last_not_of(" ") - 1, s.size()));
+    s.remove_prefix(std::min(s.find_first_not_of(' '), s.size()));
+    s.remove_suffix(std::min(s.size() - s.find_last_not_of(' ') - 1, s.size()));
 
     return s;
 }

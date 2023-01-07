@@ -46,7 +46,7 @@ namespace consoleapp
 
 void console_help(const std::string& error_message = "")
 {
-    if (error_message != "")
+    if (!error_message.empty())
     {
         fmt::print("Error: {}\n", error_message);
     }
@@ -56,7 +56,7 @@ void console_help(const std::string& error_message = "")
 
 struct Args
 {
-    std::string file_path = "";
+    std::string file_path;
     bool update = false;
     bool create = false;
 };
@@ -86,12 +86,7 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
 {
     Args args{ };
 
-    std::vector<std::string> str_args { };
-
-    for (short i{}; i < argc; ++i)
-    {
-        str_args.push_back(argv[i]);
-    }
+    std::vector<std::string> str_args {argv+1, argv+argc };
 
     if (argc == 1)
     {
@@ -100,11 +95,11 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
     }
     else if (argc == 2)
     {
-        args.file_path = str_args[1];
+        args.file_path = str_args[0];
 
         if (!fs::exists(args.file_path))
         {
-            std::string error_message =
+            const std::string error_message =
                 fmt::format("File `{}`, does not exists", args.file_path);
 
             console_help(error_message);
@@ -118,7 +113,7 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
         std::set<std::string> create_options {"-c", "-create"};
 
         auto optional_arg = std::find_if(str_args.begin(), str_args.end(),
-            [&update_options, &create_options](std::string ele)
+            [&update_options, &create_options](const std::string& ele)
             {
                 return update_options.contains(ele) || create_options.contains(ele);
             });
@@ -149,10 +144,6 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
         console_help("Number of arguments is invalid.");
         return std::unexpected(1);
     }
-    //for (int i{1}; i < argc; ++i)
-    //{
-        //fmt::print("arg: {}\n", argv[i]);
-    //}
     return args;
 }
 
