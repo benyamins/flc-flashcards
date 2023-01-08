@@ -1,0 +1,20 @@
+{
+    "intro": "Flashcards: Regiones de Chile",
+    "questions": [
+        {
+            "question": "Cual es la region numero XV?",
+            "answer": ["Arica y Parinacota", "Arica", "AP"],
+            "topic": ["Numero Regiones"],
+            "wrong_answer_text": "Incorrecto!",
+            "correct_answer_text": "Correcto!",
+            "help": "Queda en el norte... Hay litio."
+        },
+            "question": "Cual es la region numero XIII?",
+            "answer": ["Metropolitana", "RM"],
+            "topic": ["Numero Regiones"],
+            "wrong_answer_text": "Incorrecto!",
+            "correct_answer_text": "Correcto!",
+            "help": "Queda en el norte... Hay litio."
+        }
+    ]
+}

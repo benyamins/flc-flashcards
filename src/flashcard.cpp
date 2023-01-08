@@ -1,6 +1,7 @@
 #include <string>
 #include <fstream>
 #include <locale>
+#include <expected>
 
 #include <nlohmann/json.hpp>
 #include <fmt/core.h>
@@ -12,44 +13,41 @@ using json = nlohmann::json;
 namespace flc
 {
 
-enum class EResult
+class GameStats
 {
-    FileNotFound,
-    JsonError,
+    unsigned int m_correct_answers;
+    unsigned int m_wrong_answers;
+    unsigned int m_total_questions;
+
+public:
+    void update_stats(bool is_correct)
+    {
+        m_correct_answers += is_correct ? 1 : 0;
+        m_wrong_answers += is_correct ? 0 : 1;
+        ++m_total_questions;
+    }
 };
 
-struct CardStats
+
+std::expected<FlashcardDeck, EResult> parse_questions(const std::string& file_path)
 {
-    unsigned int correct_answers;
-    unsigned int total_questions;
-};
-
-void intro(std::string &questions_file) {
-    const char *intro_text = R"(
-=============================
-      The FlashCard Game
-=============================
-
-)";
-    fmt::print("{}", intro_text);
-    fmt::print("Playing with `{}`\n", questions_file);
-}
-
-
-FlashcardDeck parse_questions(std::string file_path) {
     std::ifstream input_file{file_path};
 
-    if (!input_file) {
-        fmt::print("`{}` couldn't be read\n", file_path);
-        std::exit(1);
+    if (!input_file)
+    {
+        return std::unexpected(EResult::FileNotFound);
     }
 
     json document;
 
-    input_file >> document;
-
-    //for (auto& [key, value] : document.items())
-    //    std::cout << key << ": " << value << std::endl;
+    try
+    {
+        input_file >> document;
+    }
+    catch (const json::parse_error& e)
+    {
+        return std::unexpected(EResult::JsonParseError);
+    }
 
     FlashcardDeck flashcard_deck;
 
@@ -70,46 +68,4 @@ FlashcardDeck parse_questions(std::string file_path) {
 }
 
 
-std::string_view trim(std::string_view s) {
-    s.remove_prefix(std::min(s.find_first_not_of(' '), s.size()));
-    s.remove_suffix(std::min(s.size() - s.find_last_not_of(' ') - 1, s.size()));
-
-    return s;
-}
-
-
-void flashcard_picker(const FlashcardDeck &flashcard_deck) {
-    auto to_lower = [](std::string str) {
-        std::locale loc;
-        for (auto &str_char: str)
-            str_char = std::tolower(str_char, loc);
-        return str;
-    };
-
-    fmt::print("\n{}\n\n", flashcard_deck.intro);
-
-    for (auto &flashcard: flashcard_deck.flashcards) {
-        fmt::print("Question: {}\n", flashcard.question);
-
-        std::string answer{};
-        bool is_correct{false};
-        std::cout << "Answer: ";
-
-        std::getline(std::cin, answer);
-
-        // TODO: Use a reference?
-        answer = trim(answer);
-
-        for (const auto &flc_answer: flashcard.answer) {
-            if (to_lower(answer) == to_lower(flc_answer))
-                is_correct = true;
-        }
-        if (is_correct) {
-            std::cout << "Correct!" << std::endl;
-        } else {
-            fmt::print("Wrong.. you answered: `{}`, but the correct answer is `{}`\n",
-                       answer, "<FIXME: JOIN ANSWERS HERE>");
-        }
-    }
-}
 }

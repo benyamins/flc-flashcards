@@ -6,6 +6,8 @@
 
 #include <fmt/core.h>
 
+#include "flashcard.hpp"
+
 namespace fs = std::filesystem;
 
 const char* help_text = R"(
@@ -60,26 +62,6 @@ struct Args
     bool update = false;
     bool create = false;
 };
-
-
-// command: value
-// flag1?: value?
-// flag2?
-// flagn
-//
-// 1. specify command (str)
-// 2. value type
-// 3. add flags, which:
-//    a. can be optional
-//    b. don't need a value
-//    c. can be zero or less.
-
-// command: (str|str)
-// value: (type)
-// flags?: (str)
-// value?: (type?)
-
-// struct {command = vec{"", ""?}, value<> }
 
 
 std::expected<Args, int> proc_args(int argc, char* argv[])
@@ -137,7 +119,7 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
             console_help("Invalid optional argument");
             return std::unexpected(1);
         }
-        
+
     }
     else
     {
@@ -146,5 +128,94 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
     }
     return args;
 }
+
+
+void intro(const std::string& questions_file)
+{
+    const char *intro_text = R"(
+=============================
+      The FlashCard Game
+=============================
+
+)";
+    fmt::print("{}", intro_text);
+    fmt::print("Playing with `{}`\n", questions_file);
+}
+
+std::string_view trim(std::string_view s) {
+    s.remove_prefix(std::min(s.find_first_not_of(' '), s.size()));
+    s.remove_suffix(std::min(s.size() - s.find_last_not_of(' ') - 1, s.size()));
+
+    return s;
+}
+
+int flashcard_picker(const flc::FlashcardDeck& flashcard_deck)
+{
+    auto to_lower = [](std::string str) {
+        std::locale loc;
+        for (auto &str_char: str)
+            str_char = std::tolower(str_char, loc);
+        return str;
+    };
+
+    fmt::print("\n{}\n\n", flashcard_deck.intro);
+
+    for (auto &flashcard: flashcard_deck.flashcards) {
+        fmt::print("Question: {}\n", flashcard.question);
+
+        std::string answer{};
+        bool is_correct{false};
+        std::cout << "Answer: ";
+
+        std::getline(std::cin, answer);
+
+        // TODO: Use a reference?
+        answer = trim(answer);
+
+        for (const auto &flc_answer: flashcard.answer) {
+            if (to_lower(answer) == to_lower(flc_answer))
+                is_correct = true;
+        }
+        if (is_correct) {
+            fmt::print("Correct!\n");
+        } else {
+            fmt::print("Wrong.. you answered: `{}`, but the correct answer is `{}`\n",
+                       answer, "<FIXME: JOIN ANSWERS HERE>");
+        }
+    }
+
+    return 0;
+}
+
+int play_flc(int argc, char* argv[])
+{
+    auto args_result = consoleapp::proc_args(argc, argv);
+
+    if (!args_result) {
+        return 1;
+    }
+
+    consoleapp::Args& args = args_result.value();
+
+    consoleapp::intro(args.file_path);
+
+    auto flashcard_deck = flc::parse_questions(args.file_path);
+
+    if (!flashcard_deck)
+    {
+        switch (flashcard_deck.error()) {
+
+            case flc::EResult::FileNotFound:
+                fmt::print("File `{}` wasn't found. Try Again\n", args.file_path);
+                break;
+            case flc::EResult::JsonParseError:
+                fmt::print("Json file `{}` presents errors. Try Again\n", args.file_path);
+                break;
+        }
+        return 1;
+    }
+    return consoleapp::flashcard_picker(flashcard_deck.value());
+}
+
 
 }
