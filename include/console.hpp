@@ -19,6 +19,6 @@ std::expected<Args, int> proc_args(int argc, char* argv[]);
 
 int flashcard_picker(const flc::FlashcardDeck& flashcard_deck);
 
-int play_flc(int argc, char* argv[]);
+int run_console_flc(int argc, char* argv[]);
 
 }

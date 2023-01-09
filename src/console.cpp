@@ -66,9 +66,9 @@ struct Args
 
 std::expected<Args, int> proc_args(int argc, char* argv[])
 {
-    Args args{ };
+    Args args{};
 
-    std::vector<std::string> str_args {argv+1, argv+argc };
+    std::vector<std::string> str_args{argv+1, argv+argc};
 
     if (argc == 1)
     {
@@ -187,7 +187,7 @@ int flashcard_picker(const flc::FlashcardDeck& flashcard_deck)
     return 0;
 }
 
-int play_flc(int argc, char* argv[])
+int run_console_flc(int argc, char* argv[])
 {
     auto args_result = consoleapp::proc_args(argc, argv);
 
@@ -203,8 +203,8 @@ int play_flc(int argc, char* argv[])
 
     if (!flashcard_deck)
     {
-        switch (flashcard_deck.error()) {
-
+        switch (flashcard_deck.error())
+        {
             case flc::EResult::FileNotFound:
                 fmt::print("File `{}` wasn't found. Try Again\n", args.file_path);
                 break;

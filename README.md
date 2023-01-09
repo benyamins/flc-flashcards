@@ -90,4 +90,4 @@ Question type defines how the user should input the answer:
 1. Markdown support for text (is it actually called like that?)
 2. Test if unicode works (cross-platform? lol)
 3. Check if it compiles on windows
-4. `jesonnet` support?
+4. `jsonnet` support?
