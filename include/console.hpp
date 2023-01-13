@@ -11,6 +11,7 @@ struct Args
     std::string file_path;
     bool update = false;
     bool create = false;
+    bool gui_mode = false;
 };
 
 void intro(const std::string& questions_file);

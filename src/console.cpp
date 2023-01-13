@@ -6,7 +6,9 @@
 
 #include <fmt/core.h>
 
-#include "flashcard.hpp"
+#include "gui.hpp"
+#include "console.hpp"
+
 
 namespace fs = std::filesystem;
 
@@ -56,14 +58,6 @@ void console_help(const std::string& error_message = "")
     fmt::print("{}\n", help_text);
 }
 
-struct Args
-{
-    std::string file_path;
-    bool update = false;
-    bool create = false;
-};
-
-
 std::expected<Args, int> proc_args(int argc, char* argv[])
 {
     Args args{};
@@ -91,13 +85,19 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
     else if (argc == 3)
     {
 
+        // FIXME: this whole logic is horrible, plz fix.
         std::set<std::string> update_options {"-u", "-update"};
         std::set<std::string> create_options {"-c", "-create"};
+        std::set<std::string> gui_options {"-g", "-gui"};
 
         auto optional_arg = std::find_if(str_args.begin(), str_args.end(),
-            [&update_options, &create_options](const std::string& ele)
+            [&update_options,
+                  &create_options,
+                  &gui_options](const std::string& ele)
             {
-                return update_options.contains(ele) || create_options.contains(ele);
+                return update_options.contains(ele)
+                    || create_options.contains(ele)
+                    || gui_options.contains(ele);
             });
 
         if (optional_arg != std::end(str_args))
@@ -112,7 +112,13 @@ std::expected<Args, int> proc_args(int argc, char* argv[])
                 args.create = true;
                 str_args.erase(optional_arg);
             }
-            args.file_path = str_args[1];
+            else if (gui_options.contains(*optional_arg))
+            {
+                args.gui_mode = true;
+                str_args.erase(optional_arg);
+            }
+
+            args.file_path = str_args[0];
         }
         else
         {
@@ -198,6 +204,9 @@ int run_console_flc(int argc, char* argv[])
     consoleapp::Args& args = args_result.value();
 
     consoleapp::intro(args.file_path);
+
+    if (args.gui_mode)
+        return guiapp::main_gui();
 
     auto flashcard_deck = flc::parse_questions(args.file_path);
 
