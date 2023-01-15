@@ -1,16 +1,56 @@
 [
 {
   "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/console.cpp.o", "src/console.cpp"],
-  "file": "src/console.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/imgui_draw.cpp.o", "external/imgui/imgui_draw.cpp"],
+  "file": "external/imgui/imgui_draw.cpp"
 },
 {
   "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/flashcard.cpp.o", "src/flashcard.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/imgui.cpp.o", "external/imgui/imgui.cpp"],
+  "file": "external/imgui/imgui.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/imgui_widgets.cpp.o", "external/imgui/imgui_widgets.cpp"],
+  "file": "external/imgui/imgui_widgets.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/imgui_demo.cpp.o", "external/imgui/imgui_demo.cpp"],
+  "file": "external/imgui/imgui_demo.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/imgui_tables.cpp.o", "external/imgui/imgui_tables.cpp"],
+  "file": "external/imgui/imgui_tables.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/backends/imgui_impl_sdl.cpp.o", "external/imgui/backends/imgui_impl_sdl.cpp"],
+  "file": "external/imgui/backends/imgui_impl_sdl.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/external/imgui/backends/imgui_impl_opengl3.cpp.o", "external/imgui/backends/imgui_impl_opengl3.cpp"],
+  "file": "external/imgui/backends/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/flashcard.cpp.o", "src/flashcard.cpp"],
   "file": "src/flashcard.cpp"
 },
 {
   "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/main.cpp.o", "src/main.cpp"],
-  "file": "src/main.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/console.cpp.o", "src/console.cpp"],
+  "file": "src/console.cpp"
+},
+{
+  "directory": "/home/antilles/dev/prj/flc-flashcards",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-O0", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-o", "build/.objs/flc/linux/x86_64/debug/src/gui.cpp.o", "src/gui.cpp"],
+  "file": "src/gui.cpp"
 }]
