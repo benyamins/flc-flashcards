@@ -3,14 +3,10 @@ add_rules("mode.debug", "mode.release")
 
 add_requires("fmt", "nlohmann_json", "sdl2", "opengl")
 
-if is_mode("debug") then
-	add_cxxflags("-std=c++2b", "-Wall", "-pedantic", "-pedantic-errors", "-Wconversion", "-Werror")
-else
-	add_cxxflags("-std=c++2b", "-Wall", "-Werror", "-pedantic", "-pedantic-errors", "-Wconversion", "-Wextra")
-end
+set_languages("cxxlatest")
 
 target("imgui")
-    --set_kind("static")
+    set_kind("static")
     set_warnings("none")
 	add_packages("sdl2", "opengl")
 	add_includedirs("external/imgui", {public = true})
@@ -21,6 +17,11 @@ target("imgui")
 
 target("flc")
 	set_kind("binary")
+    if is_mode("debug") then
+        set_warnings("all", "error")
+    else
+        set_warnings("everything", "error")
+    end
 	add_includedirs("include")
 	add_packages("fmt", "nlohmann_json", "sdl2", "opengl")
 	add_files("src/*.cpp")
