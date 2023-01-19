@@ -161,6 +161,27 @@ int main_gui()
             ImGui::End();
         }
 
+        {
+            ImGui::Begin("Flashcard Game");
+
+            ImGui::Text("This is a flash card game. Pick a deck to play:");
+            ImGui::Button("Search for a Deck");
+
+            ImGui::End();
+        }
+
+        {
+            ImGui::Begin("Flashcard Game");
+
+            char foo[120] = "";
+
+            ImGui::Text("This is a flash card game. Pick a deck to play:");
+            ImGui::InputText("R:", foo, 120);
+            ImGui::Button("Check");
+
+            ImGui::End();
+        }
+
         // Rendering
         ImGui::Render();
         glViewport(0, 0, (int)io.DisplaySize.x, (int)io.DisplaySize.y);
