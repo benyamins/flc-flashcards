@@ -122,6 +122,16 @@ int main_gui()
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
+        if (ImGui::BeginMainMenuBar())
+        {
+            if (ImGui::BeginMenu("Files"))
+            {
+                ImGui::MenuItem("Hello!");
+                ImGui::EndMenu();
+            }
+            ImGui::EndMainMenuBar();
+        }
+
         //bool use_work_area{true};
         ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
         const ImGuiViewport* viewport = ImGui::GetMainViewport();
@@ -139,7 +149,7 @@ int main_gui()
         }
 
         {
-            ImGui::Begin("Flashcard Game windows 2");
+            ImGui::Begin("Flashcard Game windows 2", &open_fullscreen, flags);
 
             char foo[120] = "";
 
