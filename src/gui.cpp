@@ -19,6 +19,12 @@
 namespace guiapp
 {
 
+
+void fullscreen(bool* p_open)
+{
+
+}
+
 int main_gui()
 {
     // Setup SDL
@@ -143,7 +149,10 @@ int main_gui()
             ImGui::Begin("Flashcard Game", &open_fullscreen, flags);
 
             ImGui::Text("This is a flash card game. Pick a deck to play:");
-            ImGui::Button("Search for a Deck");
+            if(ImGui::Button("Search for a Deck"))
+            {
+                open_fullscreen = false;
+            }
 
             ImGui::End();
         }

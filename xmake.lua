@@ -1,14 +1,14 @@
 set_project("flc-flashcards")
 add_rules("mode.debug", "mode.release")
 
-add_requires("fmt", "nlohmann_json", "sdl2", "opengl")
+add_requires("fmt", "nlohmann_json", "libsdl", "opengl")
 
 set_languages("cxxlatest")
 
 target("imgui")
     set_kind("static")
     set_warnings("none")
-	add_packages("sdl2", "opengl")
+	add_packages("libsdl", "opengl")
 	add_includedirs("external/imgui", {public = true})
 	add_includedirs("external/imgui/backends", {public = true})
     add_files("external/imgui/*.cpp")
@@ -23,6 +23,6 @@ target("flc")
         set_warnings("everything", "error")
     end
 	add_includedirs("include")
-	add_packages("fmt", "nlohmann_json", "sdl2", "opengl")
+	add_packages("fmt", "nlohmann_json", "libsdl", "opengl")
 	add_files("src/*.cpp")
 	add_deps("imgui")

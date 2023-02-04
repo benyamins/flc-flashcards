@@ -44,7 +44,7 @@ std::expected<FlashcardDeck, EResult> parse_questions(const std::string& file_pa
     {
         input_file >> document;
     }
-    catch (const json::parse_error& e)
+    catch (const json::parse_error&)
     {
         return std::unexpected(EResult::JsonParseError);
     }
