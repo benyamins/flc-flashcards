@@ -1,56 +1,61 @@
 [
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/imgui_tables.cpp.o", "external/imgui/imgui_tables.cpp"],
-  "file": "external/imgui/imgui_tables.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.flc.pdb", "/W3", "/WX", "/Od", "/std:c++latest", "/Iinclude", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\f\\fmt\\9.1.0\\f4b9d4bd44c8438aaa4ce4a53d77a5a3\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\n\\nlohmann_json\\v3.11.2\\7efb49bace6e4bf2a9a9013e86f776ee\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\flc\\windows\\x86\\debug\\src\\console.cpp.obj", "src\\console.cpp"],
+  "file": "src\\console.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/imgui_demo.cpp.o", "external/imgui/imgui_demo.cpp"],
-  "file": "external/imgui/imgui_demo.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.flc.pdb", "/W3", "/WX", "/Od", "/std:c++latest", "/Iinclude", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\f\\fmt\\9.1.0\\f4b9d4bd44c8438aaa4ce4a53d77a5a3\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\n\\nlohmann_json\\v3.11.2\\7efb49bace6e4bf2a9a9013e86f776ee\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\flc\\windows\\x86\\debug\\src\\flashcard.cpp.obj", "src\\flashcard.cpp"],
+  "file": "src\\flashcard.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/imgui_draw.cpp.o", "external/imgui/imgui_draw.cpp"],
-  "file": "external/imgui/imgui_draw.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.flc.pdb", "/W3", "/WX", "/Od", "/std:c++latest", "/Iinclude", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\f\\fmt\\9.1.0\\f4b9d4bd44c8438aaa4ce4a53d77a5a3\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\n\\nlohmann_json\\v3.11.2\\7efb49bace6e4bf2a9a9013e86f776ee\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\flc\\windows\\x86\\debug\\src\\gui.cpp.obj", "src\\gui.cpp"],
+  "file": "src\\gui.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/imgui_widgets.cpp.o", "external/imgui/imgui_widgets.cpp"],
-  "file": "external/imgui/imgui_widgets.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.flc.pdb", "/W3", "/WX", "/Od", "/std:c++latest", "/Iinclude", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\f\\fmt\\9.1.0\\f4b9d4bd44c8438aaa4ce4a53d77a5a3\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\n\\nlohmann_json\\v3.11.2\\7efb49bace6e4bf2a9a9013e86f776ee\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\flc\\windows\\x86\\debug\\src\\main.cpp.obj", "src\\main.cpp"],
+  "file": "src\\main.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/imgui.cpp.o", "external/imgui/imgui.cpp"],
-  "file": "external/imgui/imgui.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.flc.pdb", "/W3", "/WX", "/Od", "/std:c++latest", "/Iinclude", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\f\\fmt\\9.1.0\\f4b9d4bd44c8438aaa4ce4a53d77a5a3\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\n\\nlohmann_json\\v3.11.2\\7efb49bace6e4bf2a9a9013e86f776ee\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\flc\\windows\\x86\\debug\\src\\views.cpp.obj", "src\\views.cpp"],
+  "file": "src\\views.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/backends/imgui_impl_sdl.cpp.o", "external/imgui/backends/imgui_impl_sdl.cpp"],
-  "file": "external/imgui/backends/imgui_impl_sdl.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\imgui.cpp.obj", "external\\imgui\\imgui.cpp"],
+  "file": "external\\imgui\\imgui.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-w", "-O0", "-std=c++23", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/usr/include/SDL2", "-o", "build/.objs/imgui/linux/x86_64/debug/external/imgui/backends/imgui_impl_opengl3.cpp.o", "external/imgui/backends/imgui_impl_opengl3.cpp"],
-  "file": "external/imgui/backends/imgui_impl_opengl3.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\imgui_demo.cpp.obj", "external\\imgui\\imgui_demo.cpp"],
+  "file": "external\\imgui\\imgui_demo.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-Wall", "-Werror", "-O0", "-std=c++23", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-o", "build/.objs/flc/linux/x86_64/debug/src/console.cpp.o", "src/console.cpp"],
-  "file": "src/console.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\imgui_draw.cpp.obj", "external\\imgui\\imgui_draw.cpp"],
+  "file": "external\\imgui\\imgui_draw.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-Wall", "-Werror", "-O0", "-std=c++23", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-o", "build/.objs/flc/linux/x86_64/debug/src/gui.cpp.o", "src/gui.cpp"],
-  "file": "src/gui.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\imgui_tables.cpp.obj", "external\\imgui\\imgui_tables.cpp"],
+  "file": "external\\imgui\\imgui_tables.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-Wall", "-Werror", "-O0", "-std=c++23", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-o", "build/.objs/flc/linux/x86_64/debug/src/flashcard.cpp.o", "src/flashcard.cpp"],
-  "file": "src/flashcard.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\imgui_widgets.cpp.obj", "external\\imgui\\imgui_widgets.cpp"],
+  "file": "external\\imgui\\imgui_widgets.cpp"
 },
 {
-  "directory": "/home/antilles/dev/prj/flc-flashcards",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-Wall", "-Werror", "-O0", "-std=c++23", "-Iinclude", "-Iexternal/imgui", "-Iexternal/imgui/backends", "-D_REENTRANT", "-I", "/home/antilles/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/antilles/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/usr/include/SDL2", "-o", "build/.objs/flc/linux/x86_64/debug/src/main.cpp.o", "src/main.cpp"],
-  "file": "src/main.cpp"
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\backends\\imgui_impl_sdl.cpp.obj", "external\\imgui\\backends\\imgui_impl_sdl.cpp"],
+  "file": "external\\imgui\\backends\\imgui_impl_sdl.cpp"
+},
+{
+  "directory": "C:\\Users\\Antilles\\dev\\prj\\flc-flashcards",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\imgui.pdb", "/w", "/Od", "/std:c++latest", "/Iexternal\\imgui", "/Iexternal\\imgui\\backends", "/DSDL_MAIN_HANDLED", "/EHsc", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include", "/IC:\\Users\\Antilles\\AppData\\Local\\.xmake\\packages\\l\\libsdl\\2.26.2\\3e65b7eaec2341a79b6bd139c1a180a6\\include\\SDL2", "/Fobuild\\.objs\\imgui\\windows\\x86\\debug\\external\\imgui\\backends\\imgui_impl_opengl3.cpp.obj", "external\\imgui\\backends\\imgui_impl_opengl3.cpp"],
+  "file": "external\\imgui\\backends\\imgui_impl_opengl3.cpp"
 }]

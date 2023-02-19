@@ -15,15 +15,11 @@
 #endif
 
 #include "gui.hpp"
+#include "views.hpp"
 
 namespace guiapp
 {
 
-
-void fullscreen(bool* p_open)
-{
-
-}
 
 int main_gui()
 {
@@ -65,7 +61,7 @@ int main_gui()
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
     SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
     auto window_flags = (SDL_WindowFlags)(SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
-    SDL_Window* window = SDL_CreateWindow("Dear ImGui SDL2+OpenGL3 example", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, window_flags);
+    SDL_Window* window = SDL_CreateWindow("FLC: For Learning Purposes", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, window_flags);
     SDL_GLContext gl_context = SDL_GL_CreateContext(window);
     SDL_GL_MakeCurrent(window, gl_context);
     SDL_GL_SetSwapInterval(1); // Enable vsync
@@ -104,6 +100,9 @@ int main_gui()
     // Our state
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
+    bool show_fc_home{true};
+    bool show_fc_question{true};
+
     // Main loop
     bool done = false;
     while (!done)
@@ -138,36 +137,8 @@ int main_gui()
             ImGui::EndMainMenuBar();
         }
 
-        //bool use_work_area{true};
-        ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
-        const ImGuiViewport* viewport = ImGui::GetMainViewport();
-        ImGui::SetNextWindowPos(viewport->WorkPos);
-        ImGui::SetNextWindowSize(viewport->Size);
-        bool open_fullscreen {true};
-        // 3. Show another simple window.
-        {
-            ImGui::Begin("Flashcard Game", &open_fullscreen, flags);
-
-            ImGui::Text("This is a flash card game. Pick a deck to play:");
-            if(ImGui::Button("Search for a Deck"))
-            {
-                open_fullscreen = false;
-            }
-
-            ImGui::End();
-        }
-
-        {
-            ImGui::Begin("Flashcard Game windows 2", &open_fullscreen, flags);
-
-            char foo[120] = "";
-
-            ImGui::Text("This is a flash card game. Pick a deck to play:");
-            ImGui::InputText("R:", foo, 120);
-            ImGui::Button("Check");
-
-            ImGui::End();
-        }
+        vw_fc_home(&show_fc_home);
+        if (show_fc_question) vw_fc_question(&show_fc_question);
 
         // Rendering
         ImGui::Render();
